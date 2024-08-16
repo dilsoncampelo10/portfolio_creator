@@ -1,0 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Importa o Font Awesome */
+@import "@fortawesome/fontawesome-free/css/all.min.css";
