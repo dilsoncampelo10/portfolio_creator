@@ -21,7 +21,7 @@ class PortfolioController extends Controller
      */
     public function create()
     {
-        return 'eae';
+        return view('portfolios.create');
     }
 
     /**
