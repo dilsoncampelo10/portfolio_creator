@@ -2,8 +2,8 @@
 
 namespace App\Enum;
 
-enum PortfolioStatus : string
+enum PortfolioStatus: string
 {
-    case Active = 'pending';
-    case Inactive = 'processing';
+    case Active = 'active';
+    case Inactive = 'inactive';
 }

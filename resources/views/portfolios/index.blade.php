@@ -25,28 +25,22 @@
                     <table class=" w-full">
                      
                         <tbody>
-                          <tr class="border-b-2 border-gray-200 border-spacing-2">
-                            <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
-                            <td>Malcolm Lockyer</td>
-                            <td class="flex gap-2">
-                                <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
-                                <form action="" method="post">
-                                    <button type="submit">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </button>
-                                </form>
-                            </td>
-                          </tr>
-                          <tr class="border-b-2 border-gray-200">
-                            <td>Witchy Woman</td>
-                            <td>The Eagles</td>
-                            <td>1972</td>
-                          </tr>
-                          <tr class="border-b-2 border-gray-200">
-                            <td>Shining Star</td>
-                            <td>Earth, Wind, and Fire</td>
-                            <td>1975</td>
-                          </tr>
+                            @foreach ($portfolios as $portfolio)
+                                <tr class="border-b-2 border-gray-200 border-spacing-2">
+                                    <td>{{$portfolio->title}}</td>
+                                    <td>{{$portfolio->description}}</td>
+                                    <td class="flex gap-2">
+                                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                                        <form action="" method="post">
+                                            <button type="submit">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
+                          
+                         
                         </tbody>
                       </table>
                       @else
