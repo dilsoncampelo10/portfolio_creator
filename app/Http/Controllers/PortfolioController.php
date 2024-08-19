@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Portfolio;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class PortfolioController extends Controller
 {
@@ -29,7 +30,12 @@ class PortfolioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $data['token'] = Str::uuid();
+        Portfolio::create($data);
+
+        return redirect()->back()->with('success', 'Portifólio Criado com sucesso');
     }
 
     /**
