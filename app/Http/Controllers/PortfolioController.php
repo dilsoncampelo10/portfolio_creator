@@ -65,8 +65,12 @@ class PortfolioController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Portfolio $portfolio)
+    public function destroy(int $id)
     {
-        //
+        $portfolio = Portfolio::findOrFail($id);
+
+        $portfolio->delete();
+
+        return redirect()->back()->with('success', 'Portifólio deletado com sucesso!');
     }
 }
