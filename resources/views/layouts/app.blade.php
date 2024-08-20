@@ -28,6 +28,13 @@
             @endisset
 
             <!-- Page Content -->
+            @if (session('success'))
+                <div id="alert_success" class="alert flex items-center justify-between bg-green-100 mx-auto max-w-7xl mt-6 text-green-900 font-semibold p-3">
+                    <div><i class="fa-solid fa-circle-check"></i> <span class="mx-6">Sucesso - {{session('success')}}</span></div>
+                    <button id="close_button" class="text-right close_button"><i class="fa-solid fa-x"></i></button>
+                </div>
+            @endif
+          
             <main>
                 {{ $slot }}
             </main>
