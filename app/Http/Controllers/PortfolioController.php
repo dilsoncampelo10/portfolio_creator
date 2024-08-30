@@ -49,17 +49,23 @@ class PortfolioController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Portfolio $portfolio)
+    public function edit(int $id)
     {
-        //
+        $portfolio = Portfolio::findOrFail($id);
+
+        return view('portfolios.edit', compact('portfolio'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Portfolio $portfolio)
+    public function update(Request $request)
     {
-        //
+        $portfolio = Portfolio::findOrFail($request->id);
+
+        $portfolio->update($request->all());
+
+        return redirect()->back()->with('success', 'Portifólio alterado com sucesso');
     }
 
     /**

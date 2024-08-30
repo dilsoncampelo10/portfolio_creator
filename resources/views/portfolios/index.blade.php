@@ -30,7 +30,7 @@
                                     <td>{{$portfolio->title}}</td>
                                     <td>{{$portfolio->description}}</td>
                                     <td class="flex gap-2">
-                                        <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                                        <a href="{{route('portfolio.edit',['id'=>$portfolio->id])}}"><i class="fa-solid fa-pen-to-square"></i></a>
                                         <form action="{{route('portfolio.destroy',['id'=>$portfolio->id])}}" method="post">
                                             @csrf
                                             @method('DELETE')
