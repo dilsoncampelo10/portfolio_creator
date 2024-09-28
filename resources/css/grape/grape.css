@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+  html {
+    overflow: scroll;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+
+
+  .gjs-one-bg{
+    background-color: rgb(252, 252, 252);
+  }
+  .gjs-two-color{
+    color: #DC3545;
+  }
+  .gjs-three-bg{
+    color: #DC3545;
+  }
+  .gjs-four-color,.gjs-four-color-h:hover{
+    color: #DC3545;
+  }
+
+  .gjs-block__media svg, .gjs-blocks-c img{
+    width: 50px;
+
+  }
+  .gjs-block{
+    cursor: pointer;
+  }

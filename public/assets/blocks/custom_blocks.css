@@ -1,0 +1,18 @@
+*{
+    margin: auto;
+    text-align: center;
+}
+div,.custom-text-section,ul,ol{
+    max-width: 1000px;
+  
+  }
+div[data-gjs-type="wrapper"],.content,.topicos-container,.topico{
+    max-width: 100%;
+}
+
+img{
+    max-width: 500px;
+    display: block;
+    margin: 30px auto;
+    width:90%;
+}
