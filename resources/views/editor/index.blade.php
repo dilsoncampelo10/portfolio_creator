@@ -16,6 +16,7 @@
 
     <script src="https://unpkg.com/grapesjs"></script>
     <script src="https://unpkg.com/grapesjs-blocks-basic"></script>
+    <script src="https://unpkg.com/grapesjs-style-bg"></script>
   </head>
   <body>
   

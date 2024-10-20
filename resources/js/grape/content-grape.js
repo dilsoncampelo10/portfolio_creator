@@ -3,9 +3,10 @@ const editor = grapesjs.init({
     fromElement: true,
     width: "auto",
     storageManager: false,
-    plugins: ["gjs-blocks-basic"],
+    plugins: ["gjs-blocks-basic","grapesjs-style-bg"],
     pluginsOpts: {
       "gjs-blocks-basic": {},
+      "grapesjs-style-bg":{}
     },
     blockManager: {
       appendTo: "#blocks",
@@ -25,7 +26,7 @@ const editor = grapesjs.init({
         {
           name: "Dimensão",
           open: false,
-          buildProps: ["width","min-height","padding"],
+          buildProps: ["width","min-height","padding","background-color","color"],
           properties: [{
             type: "integer",
             name: "Largura",
@@ -33,6 +34,14 @@ const editor = grapesjs.init({
             units: ["pix","%","rem"],
             defaults: "auto",
             min: 0
+          }]
+        },
+        {
+          name: "Decoração",
+          open: false,
+          buildProps: ["background","opacity"],
+          properties: [{
+        
           }]
         }
       ]
