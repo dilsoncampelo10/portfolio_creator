@@ -12,7 +12,7 @@
 
 
     <link rel="stylesheet" href="https://unpkg.com/grapesjs/dist/css/grapes.min.css">
-    @vite(['resources/css/main.css','resources/css/grape/grape.css','resources/js/grape/content-grape.js','resources/js/app.js'])
+    @vite(['resources/css/main.css','resources/css/grape/grape.css','resources/js/grape/content-grape.js','resources/js/app.js','resources/js/grape/custom-blocks.js'])
 
     <script src="https://unpkg.com/grapesjs"></script>
     <script src="https://unpkg.com/grapesjs-blocks-basic"></script>
@@ -133,12 +133,15 @@
         <div id="editor">
 
           <link rel="stylesheet" href="{{asset('assets/blocks/custom_blocks.css')}}">
-
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+   
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
         </div>
     </div>
 
 
-    <script type="text/javascript" src="{{asset('js/content-grape.js')}}"></script>
+ 
+  
   </body>
 </html>

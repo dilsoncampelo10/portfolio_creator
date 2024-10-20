@@ -45,7 +45,7 @@ const editor = grapesjs.init({
           buttons: [
             {
               id: "visibility",
-              active: true,
+              active: false,
               className: "btn-toggle-borders",
               label: "<i class='fa-solid fa-border-all'></i>",
               command: "sw-visibility"
@@ -109,6 +109,7 @@ const editor = grapesjs.init({
     }
   });
 
+  window.editor = editor
 
   // editor.BlockManager.add('video', {
   //   label: 'Video',
@@ -168,8 +169,52 @@ const editor = grapesjs.init({
     });
   }
   cloneAndTranslateBlock('text', 'texto', 'Texto', 'Padrão','<img src=/assets/img/icons/editor/text.svg>');
-  cloneAndTranslateBlock('link', 'linkn', 'Link', 'Padrão',`<img src=/assets/img/icons/editor/link.svg>`);
+  cloneAndTranslateBlock('link', 'linkn', 'Link', 'Navegação',`<img src=/assets/img/icons/editor/link.svg>`);
   cloneAndTranslateBlock('image', 'imagem', 'Imagem', 'Padrão',`<img src=/assets/img/icons/editor/image.svg>`);
   cloneAndTranslateBlock('video', 'videon', 'Vídeo', 'Padrão',`<img src=/assets/img/icons/editor/video.svg>`);
 removeBlocks()
 document.querySelector('.gjs-block-category').style.display = 'none';
+
+
+function addBottomSpace(editor) {
+  const wrapper = editor.getWrapper(); 
+  const wrapperEl = wrapper.view.el; 
+  const existingSpace = wrapperEl.querySelector('.extra-space');
+
+  if (!existingSpace) {
+    const spacer = document.createElement('div');
+    spacer.className = 'extra-space';
+    spacer.style.height = '200px'; 
+    // spacer.style.border = '2px dashed #ccc'; 
+    spacer.style.position = 'relative';
+    spacer.style.zIndex = '1'; 
+
+ 
+    spacer.ondrop = (event) => {
+      event.preventDefault();
+      const data = event.dataTransfer.getData('text/plain');
+      editor.addComponents(data); 
+    };
+
+    spacer.ondragover = (event) => {
+      event.preventDefault();
+      spacer.style.backgroundColor = '#fff'; 
+    };
+
+    spacer.ondragleave = () => {
+      spacer.style.backgroundColor = ''; 
+    };
+
+ 
+    wrapperEl.appendChild(spacer);
+  }
+}
+
+editor.on('load', () => {
+  addBottomSpace(editor);
+});
+
+
+editor.on('component:add component:update', () => {
+  addBottomSpace(editor);
+});

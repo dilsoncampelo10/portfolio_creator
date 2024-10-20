@@ -9,6 +9,9 @@ html{
 .navbar-dark{
     background-color: red !important;
 }
+nav.navbar-light{
+    border-bottom: 1px solid #cecece;
+}
 :root{
     --dark-primary: rgba(255,255,255,0.95);
 }
