@@ -1,6 +1,7 @@
 editor.BlockManager.add('contact-section', {
     label: 'Contact Section',
     category: 'Seção',
+    media: '<img src=/assets/img/icons/editor/contact.svg>',
     content: `
       <section class="contact-section">
         <div class="contact-container">

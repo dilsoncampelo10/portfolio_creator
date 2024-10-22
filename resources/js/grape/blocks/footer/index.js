@@ -1,6 +1,7 @@
 editor.BlockManager.add('footer-section', {
     label: 'Footer',
-    category: 'Sections',
+    category: 'Seção',
+    media: '<img src=/assets/img/icons/editor/footer.svg>',
     content: `
       <footer class="footer-section">
         <div class="footer-container">

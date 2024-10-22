@@ -23,27 +23,36 @@ const editor = grapesjs.init({
     styleManager: {
       appendTo: "#style-container",
       sectors: [
-        {
-          name: "Dimensão",
-          open: false,
-          buildProps: ["width","min-height","padding","background-color","color"],
-          properties: [{
-            type: "integer",
-            name: "Largura",
-            property: "width",
-            units: ["pix","%","rem"],
-            defaults: "auto",
-            min: 0
-          }]
-        },
+        
         {
           name: "Decoração",
           open: false,
-          buildProps: ["background","opacity"],
-          properties: [{
-        
-          }]
-        }
+          buildProps: ["opacity","border-radius","border","box-shadow","background"],
+
+        },
+        {
+          name: "Fonte e Alinhamento",
+          open: true,
+          buildProps: ["font-family","font-size","color","background-color","line-height","text-align","background","opacity"],
+          properties: [
+            { name: 'Fonte', property: 'font-family' },
+            { name: 'Tamanho', property: 'font-size' },
+            { name: 'Cor do Texto', property: 'color' },
+            { name: 'Destaque', property: 'background-color' },
+            { name: 'Altura da linha', property: 'line-height' },
+          
+            { name: 'Alinhamento', property: 'text-align', options: [
+              { value: 'left', name: '<img src="/assets/img/icons/editor/left.svg"/>' }, 
+              { value: 'center', name: '<img src="/assets/img/icons/editor/center.svg"/>' }, 
+              { value: 'right', name: '<img src="/assets/img/icons/editor/right.svg"/>' }, 
+              { value: 'justify', name: '<img src="/assets/img/icons/editor/justify.svg"/>' }
+            ],},
+                      
+          ],
+          
+       
+        },
+  
       ]
     },
     panels: {
@@ -52,6 +61,7 @@ const editor = grapesjs.init({
           id: "basic-actions",
           el: ".panel__basic-actions",
           buttons: [
+            
             {
               id: "visibility",
               active: false,

@@ -18,6 +18,9 @@ return new class extends Migration
             $table->text('description');
             $table->enum('status', array_column(PortfolioStatus::cases(), 'value'));
             $table->uuid('token');
+
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
