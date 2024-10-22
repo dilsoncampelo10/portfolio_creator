@@ -12,3 +12,7 @@ import('../grape/blocks/experience/index.js');
 import('../grape/blocks/skills/index.js');
 
 import('../grape/blocks/projects/index.js');
+
+import('../grape/blocks/contact/index.js');
+
+import('../grape/blocks/footer/index.js');
