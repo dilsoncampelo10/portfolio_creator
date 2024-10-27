@@ -12,9 +12,10 @@ html{
 nav.navbar-light{
     border-bottom: 1px solid #cecece;
     width: 100vw;
+    background-color: var(--editor-primary);
 }
 :root{
-    --dark-primary: rgba(255,255,255,0.95);
+    --editor-primary: rgba(0,0,0,0.9);
 }
 .sidenav{
     position: fixed;
@@ -25,10 +26,14 @@ nav.navbar-light{
     overflow: scroll;
     overflow-x: hidden;
     scrollbar-width: none;
-    background-color: rgba(255,255,255,0.95);
+    background-color: var(--editor-primary);
     transition: 0.5s;
     box-shadow: 0 0.5rem rgba(0,0,0,0.5);
     border: 1px solid rgba(0,0,0,0.3);
+}
+.list-group-item{
+    background-color: var(--editor-primary);
+    color: white;
 }
 .logo{
     border-bottom: 1px solid rgba(0,0,0,0.3);
@@ -68,13 +73,9 @@ height: 100%;
     position: relative;
 }
 .gjs-pn-btn{
-    border: 1px solid #10ACDD;
+    border: 1px solid #DC3545;
 }
 
-body.dark-mode {
-    background-color: var(--dark-primary);;
-    color: #ffffff;
-  }
   
   /* Adicione outros estilos necessários para seus componentes */
   .gjs-cv-canvas.dark-mode {

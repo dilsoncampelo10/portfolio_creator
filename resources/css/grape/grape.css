@@ -12,7 +12,7 @@ body {
 
 
   .gjs-one-bg{
-    background-color: rgb(252, 252, 252);
+    background-color: transparent;
   }
   .gjs-two-color{
     color: #DC3545;
