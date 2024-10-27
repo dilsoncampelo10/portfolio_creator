@@ -23,12 +23,13 @@
     <div id="navbar" class="sidenav d-flex flex-column overflow-scroll"> 
     
         <div class="my-2 d-flex flex-column">
-          <button type="button" class="btn btn-outline-secondary btn-sm mx-2">
+          <button type="button" class="btn btn-outline-light btn-sm mx-2 my-3" data-bs-toggle="modal" data-bs-target="#addPageModal">
             <i class="fa-solid fa-file-circle-plus"></i> Add Página
           </button>
           <ul class="list-group topics">
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-                Página 1
+            @foreach ($pages as $page)
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                {{$page->title}}
                 <div class="m-2">
                     
                     <button class="btn btn-sm btn-outline-primary">
@@ -39,28 +40,8 @@
                     </button>
                 </div>
             </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              Página 2
-              <div class="m-2">
-                  <button class="btn btn-sm btn-outline-primary">
-                      <i class="fa-solid fa-pencil"></i>
-                  </button>
-                  <button class="btn btn-sm btn-outline-danger">
-                      <i class="fa-solid fa-trash"></i>
-                  </button>
-              </div>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            Página 3
-                <div class="m-2">
-                  <button class="btn btn-sm btn-outline-primary">
-                    <i class="fa-solid fa-pencil"></i>
-                </button>
-                <button class="btn btn-sm btn-outline-danger">
-                  <i class="fa-solid fa-trash"></i>
-                </button>
-            </div>
-        </li>
+            @endforeach
+        
           </ul>
         </div>
         <div>
@@ -120,9 +101,9 @@
               <header class="navbar navbar-light">
                 <div class="container-fluid">
                     <span class="navbar-brand mb-0 h3 logo">
-                        <a href="{{route('dashboard')}}">
+                        <a href="{{route('dashboard')}}" class="text-decoration-none">
                           <i class="fa-solid fa-not-equal"></i>
-                          <img src="" alt="logo" class="w-100"></a>
+                          DILSON
                     </span>
                 </div>
               </header>
@@ -142,7 +123,7 @@
     </div>
 
 
- 
-  
+    @include('components.modal.page.create')
+
   </body>
 </html>

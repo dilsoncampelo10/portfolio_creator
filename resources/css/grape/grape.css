@@ -10,7 +10,9 @@ body {
   }
   
 
-
+.grp-preview{
+  height: 10px;
+}
   .gjs-one-bg{
     background-color: transparent;
   }

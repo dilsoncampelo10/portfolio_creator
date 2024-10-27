@@ -5,15 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Portfolio extends Model
+class Page extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'title',
-        'description',
-        'token',
-        'user_id'
+        'url',
+        'status',
+        'user_id',
+        'portfolio_id'
     ];
 
     public function user()
@@ -21,8 +22,8 @@ class Portfolio extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function pages()
+    public function portfolio()
     {
-        return $this->hasMany(Page::class);
+        return $this->belongsTo(Portfolio::class);
     }
 }

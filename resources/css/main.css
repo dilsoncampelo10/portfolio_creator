@@ -30,6 +30,16 @@ nav.navbar-light{
     transition: 0.5s;
     box-shadow: 0 0.5rem rgba(0,0,0,0.5);
     border: 1px solid rgba(0,0,0,0.3);
+    padding-bottom: 65px;
+}
+.gjs-mdl-dialog{
+    background-color: white !important;
+}
+.gjs-am-file-uploader{
+    display: none;
+}
+.gjs-am-assets-cont{
+    width: 100%;
 }
 .list-group-item{
     background-color: var(--editor-primary);

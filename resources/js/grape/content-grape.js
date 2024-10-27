@@ -32,7 +32,7 @@ const editor = grapesjs.init({
         },
         {
           name: "Fonte e Alinhamento",
-          open: true,
+          open: false,
           buildProps: ["font-family","font-size","color","background-color","line-height","text-align","background","opacity"],
           properties: [
             { name: 'Fonte', property: 'font-family' },
@@ -49,6 +49,15 @@ const editor = grapesjs.init({
             ],},
                       
           ],
+          
+       
+        },
+
+        {
+          name: "Avançado",
+          open: false,
+          buildProps: ["margin","padding","float"],
+          
           
        
         },

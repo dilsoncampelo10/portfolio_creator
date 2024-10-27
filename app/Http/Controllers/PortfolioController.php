@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Page;
 use App\Models\Portfolio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,8 +16,9 @@ class PortfolioController extends Controller
     public function index()
     {
         $portfolios = auth()->user()->portfolios;
+        $firstPage = Page::where('portfolio_id', $portfolios[0]->id)->first();
 
-        return view('portfolios.index', compact('portfolios'));
+        return view('portfolios.index', compact('portfolios', 'firstPage'));
     }
 
     /**
@@ -36,7 +38,16 @@ class PortfolioController extends Controller
 
         $data['token'] = Str::uuid();
         $data['user_id'] = Auth::user()->id;
-        Portfolio::create($data);
+        $portfolio = Portfolio::create($data);
+
+        if ($portfolio) {
+            $array = [
+                'title' => 'Página Inicial',
+                'user_id' => Auth::user()->id,
+                'portfolio_id' => $portfolio->id
+            ];
+            Page::create($array);
+        }
 
         return redirect()->back()->with('success', 'Portifólio Criado com sucesso');
     }

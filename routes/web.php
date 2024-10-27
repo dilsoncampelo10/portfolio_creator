@@ -19,7 +19,7 @@ Route::middleware('auth')->group(function () {
 });
 
 
-Route::get('/editor/portfiolio/{token}',[EditorController::class,'editor'])->name('editor.portfolio');
+Route::get('/editor/portfiolio/{token}/{page}',[EditorController::class,'editor'])->name('editor.portfolio');
 
 require __DIR__.'/auth.php';
 require __DIR__.'/portfolio.php';
