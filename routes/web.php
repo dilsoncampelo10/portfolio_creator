@@ -16,10 +16,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::get('/editor/portfiolio/{token}/{page}',[EditorController::class,'editor'])->name('editor.portfolio');
 });
 
 
-Route::get('/editor/portfiolio/{token}/{page}',[EditorController::class,'editor'])->name('editor.portfolio');
+
 
 require __DIR__.'/auth.php';
 require __DIR__.'/portfolio.php';

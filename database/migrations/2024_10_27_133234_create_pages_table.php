@@ -20,6 +20,9 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('portfolio_id');
 
+            $table->longText('html')->nullable();
+            $table->longText('css')->nullable();
+
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('portfolio_id')->references('id')->on('portfolios');
 

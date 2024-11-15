@@ -16,9 +16,9 @@ class PortfolioController extends Controller
     public function index()
     {
         $portfolios = auth()->user()->portfolios;
-        $firstPage = Page::where('portfolio_id', $portfolios[0]->id)->first();
 
-        return view('portfolios.index', compact('portfolios', 'firstPage'));
+
+        return view('portfolios.index', compact('portfolios'));
     }
 
     /**

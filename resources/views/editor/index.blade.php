@@ -104,6 +104,7 @@
                         <a href="{{route('dashboard')}}" class="text-decoration-none">
                           <i class="fa-solid fa-not-equal"></i>
                           DILSON
+                        </a>
                     </span>
                 </div>
               </header>
