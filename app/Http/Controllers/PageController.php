@@ -16,4 +16,16 @@ class PageController extends Controller
 
         return redirect()->back()->with('success', 'Página Criada com sucesso');
     }
+
+    public function save(Request $request)
+    {
+        $page = Page::findOrFail($request->page);
+
+        $page->update([
+            'html' => $request->html,
+            'css' => $request->css
+        ]);
+
+        return response()->json(['Tópico salvo com sucesso!'], 201);
+    }
 }

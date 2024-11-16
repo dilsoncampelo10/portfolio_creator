@@ -14,7 +14,9 @@ class Page extends Model
         'url',
         'status',
         'user_id',
-        'portfolio_id'
+        'portfolio_id',
+        'html',
+        'css'
     ];
 
     public function user()

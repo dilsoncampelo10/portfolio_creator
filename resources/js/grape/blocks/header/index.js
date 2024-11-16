@@ -14,7 +14,7 @@ editor.BlockManager.add('portfolio-header', {
             <a href=""> Download CV </a>
           </div>
           <div class="image-section">
-            <img src="https://via.placeholder.com/400" alt="Portfolio Image" class="header-image">
+            <img src="/assets/img/400.png" alt="Portfolio Image" class="header-image">
           </div>
         </div>
       </header>

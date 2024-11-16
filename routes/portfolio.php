@@ -13,4 +13,6 @@ Route::middleware('auth')->group(function () {
     Route::put('/editar/portifolio', [PortfolioController::class, 'update'])->name('portfolio.update');
 
     Route::post('/criar/pagina', [PageController::class, 'store'])->name('page.store');
+
+    Route::post('/save/{page}', [PageController::class, 'save'])->name('save.page');
 });

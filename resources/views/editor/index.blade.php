@@ -8,11 +8,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
 
     <link rel="stylesheet" href="https://unpkg.com/grapesjs/dist/css/grapes.min.css">
-    @vite(['resources/css/main.css','resources/css/grape/grape.css','resources/js/grape/content-grape.js','resources/js/app.js','resources/js/grape/custom-blocks.js'])
+    @vite(['resources/css/main.css','resources/css/grape/grape.css','resources/js/grape/content-grape.js','resources/js/app.js','resources/js/grape/custom-blocks.js','resources/js/grape/editor/index.js'])
 
     <script src="https://unpkg.com/grapesjs"></script>
     <script src="https://unpkg.com/grapesjs-blocks-basic"></script>
@@ -108,7 +108,19 @@
                     </span>
                 </div>
               </header>
+              <div>
+             
+             
+                <button class="mt-2 btn btn-sm btn-outline-success save-button" data-page="{{$page->id}}" data-portfolio="{{ $portfolio->id}}">   
+                  <i class="fa-regular fa-floppy-disk save-icon"></i>
+          
+                  <span class="spinner-grow spinner-grow-sm loading-icon d-none" aria-hidden="true"></span>
+                   Salvar
+                
+                </button>
+              </div>
               <div class="panel__basic-actions"></div>
+              
                 <div class="panel__devices"></div>
            
             </div>
@@ -125,6 +137,6 @@
 
 
     @include('components.modal.page.create')
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 </html>
