@@ -43,6 +43,7 @@ class PortfolioController extends Controller
         if ($portfolio) {
             $array = [
                 'title' => 'Página Inicial',
+                'url' => 'home',
                 'user_id' => Auth::user()->id,
                 'portfolio_id' => $portfolio->id
             ];
@@ -93,15 +94,15 @@ class PortfolioController extends Controller
 
         return redirect()->back()->with('success', 'Portifólio deletado com sucesso!');
     }
-    public function preview($token,$url=null)
+    public function preview($token, $url)
     {
         $portfolio = Portfolio::where('token', $token)->first();
-       
-        if(!$portfolio){
-            return back()->withErrors(['error'=>'Erro']);
-        }
-        $firstPage = $portfolio->pages[0];
 
-        return view('portfolios.show', compact('firstPage'));
+        if (!$portfolio) {
+            return back()->withErrors(['error' => 'Erro']);
+        }
+        $currentPage = Page::where('url', $url)->first();
+
+        return view('portfolios.show', compact('currentPage'));
     }
 }

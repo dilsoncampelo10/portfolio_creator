@@ -119,7 +119,7 @@
                    Salvar
                 
                 </button>
-                <a target="_blank" class="mt-2 btn btn-sm btn-outline-primary ms-3" href="{{route('portfolio.preview',['token'=>$portfolio->token])}}"><i class="fa-solid fa-eye"></i> Visualizar Resultado</a>
+                <a target="_blank" class="mt-2 btn btn-sm btn-outline-primary ms-3" href="{{route('portfolio.preview',['token'=>$portfolio->token,'url'=>$currentPage->url])}}"><i class="fa-solid fa-eye"></i> Visualizar Resultado</a>
               </div>
               <div class="panel__basic-actions"></div>
               

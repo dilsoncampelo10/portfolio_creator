@@ -13,6 +13,7 @@ class EditorController extends Controller
         $portfolio = Portfolio::where('token', $request->token)->first();
         $pages = $portfolio->pages;
         $currentPage = Page::where('id', $request->page)->first();
+        
 
         return view('editor.index', compact('portfolio', 'pages', 'currentPage'));
     }

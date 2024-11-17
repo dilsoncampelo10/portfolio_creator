@@ -7,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    {!!$firstPage->html!!}
+    {!!$currentPage->html!!}
 </body>
 </html>

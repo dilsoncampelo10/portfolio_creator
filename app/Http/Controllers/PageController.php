@@ -12,6 +12,7 @@ class PageController extends Controller
     {
         $data = $request->all();
         $data['user_id'] = Auth::user()->id;
+        $data['url'] = strtolower($request->title);
         Page::create($data);
 
         return redirect()->back()->with('success', 'Página Criada com sucesso');

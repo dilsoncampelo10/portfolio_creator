@@ -9,7 +9,7 @@ div,.custom-text-section,ul,ol{
 div[data-gjs-type="wrapper"],.content,.topicos-container,.topico{
     max-width: 100%;
 }
-[data-gjs-type="video"]{
+[data-gjs-type="video"],iframe[src*="youtube.com"] {
   width: 615px ;
   height: 350px;
   margin: 30px auto;
