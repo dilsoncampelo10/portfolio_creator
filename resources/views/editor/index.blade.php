@@ -29,7 +29,7 @@
           <ul class="list-group topics">
             @foreach ($pages as $page)
               <li class="list-group-item d-flex justify-content-between align-items-center">
-                {{$page->title}}
+                <a class="btn text-light" href="{{route('editor.portfolio',['token'=>$portfolio->token,'page'=>$page->id])}}">{{$page->title}}</a>
                 <div class="m-2">
                     
                     <button class="btn btn-sm btn-outline-primary">
@@ -111,13 +111,15 @@
               <div>
              
              
-                <button class="mt-2 btn btn-sm btn-outline-success save-button" data-page="{{$page->id}}" data-portfolio="{{ $portfolio->id}}">   
+                <button class="mt-2 btn btn-sm btn-outline-success save-button" data-page="{{$currentPage->id}}" data-portfolio="{{ $portfolio->id}}">   
+              
                   <i class="fa-regular fa-floppy-disk save-icon"></i>
           
                   <span class="spinner-grow spinner-grow-sm loading-icon d-none" aria-hidden="true"></span>
                    Salvar
                 
                 </button>
+                <a class="mt-2 btn btn-sm btn-outline-primary ms-3" href=""><i class="fa-solid fa-eye"></i> Visualizar Resultado</a>
               </div>
               <div class="panel__basic-actions"></div>
               
@@ -126,7 +128,7 @@
             </div>
         </nav>
         <div id="editor">
-
+          {!!$currentPage->html!!}
           <link rel="stylesheet" href="{{asset('assets/blocks/custom_blocks.css')}}">
           <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
    

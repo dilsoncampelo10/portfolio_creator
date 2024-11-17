@@ -9,7 +9,11 @@ div,.custom-text-section,ul,ol{
 div[data-gjs-type="wrapper"],.content,.topicos-container,.topico{
     max-width: 100%;
 }
-
+[data-gjs-type="video"]{
+  width: 615px ;
+  height: 350px;
+  margin: 30px auto;
+}
 img{
     max-width: 500px;
     display: block;

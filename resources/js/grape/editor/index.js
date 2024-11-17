@@ -7,6 +7,7 @@ document.querySelectorAll('.save-button').forEach(btn => {
         // Troca para ícone de carregamento
       
         loadingIcon.classList.remove('d-none');
+        saveIcon.style.display = 'none';
     
         const html = editor.getHtml();
         const css = editor.getCss();
@@ -55,7 +56,7 @@ document.querySelectorAll('.save-button').forEach(btn => {
             // Troca de volta para o ícone de salvar quando o processo terminar
             loadingIcon.classList.add('d-none');
 
-            saveIcon.style.display = 'block !important';
+            saveIcon.style.display = 'inline'
     
       
         });
