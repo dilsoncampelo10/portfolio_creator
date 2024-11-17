@@ -93,4 +93,15 @@ class PortfolioController extends Controller
 
         return redirect()->back()->with('success', 'Portifólio deletado com sucesso!');
     }
+    public function preview($token,$url=null)
+    {
+        $portfolio = Portfolio::where('token', $token)->first();
+       
+        if(!$portfolio){
+            return back()->withErrors(['error'=>'Erro']);
+        }
+        $firstPage = $portfolio->pages[0];
+
+        return view('portfolios.show', compact('firstPage'));
+    }
 }

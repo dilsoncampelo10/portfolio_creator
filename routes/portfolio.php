@@ -15,4 +15,6 @@ Route::middleware('auth')->group(function () {
     Route::post('/criar/pagina', [PageController::class, 'store'])->name('page.store');
 
     Route::post('/save/{page}', [PageController::class, 'save'])->name('save.page');
+
+    Route::get('/preview/{token}/{url?}', [PortfolioController::class, 'preview'])->name('portfolio.preview');
 });
