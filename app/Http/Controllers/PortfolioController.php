@@ -90,6 +90,8 @@ class PortfolioController extends Controller
     {
         $portfolio = Portfolio::findOrFail($id);
 
+        $portfolio->pages()->delete();
+
         $portfolio->delete();
 
         return redirect()->back()->with('success', 'Portifólio deletado com sucesso!');
@@ -98,10 +100,11 @@ class PortfolioController extends Controller
     {
         $portfolio = Portfolio::where('token', $token)->first();
 
+     
         if (!$portfolio) {
             return back()->withErrors(['error' => 'Erro']);
         }
-        $currentPage = Page::where('url', $url)->first();
+        $currentPage = $portfolio->pages->where('url', $url)->first();
 
         return view('portfolios.show', compact('currentPage'));
     }
