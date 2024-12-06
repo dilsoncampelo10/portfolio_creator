@@ -27,7 +27,7 @@
                         <tbody>
                             @foreach ($portfolios as $portfolio)
                                 <tr class="border-b-2 border-gray-200 border-spacing-2">
-                                    <td><a href="{{route('editor.portfolio',['token'=>$portfolio->token,'page'=>1])}}">{{$portfolio->title}}</a></td>
+                                    <td><a href="{{route('editor.portfolio',['token'=>$portfolio->token,'page'=>$portfolio->pages[0]->id])}}">{{$portfolio->title}}</a></td>
                                     <td>{{$portfolio->description}}</td>
                                     <td class="flex gap-2">
                                         <a href="{{route('portfolio.edit',['id'=>$portfolio->id])}}"><i class="fa-solid fa-pen-to-square"></i></a>

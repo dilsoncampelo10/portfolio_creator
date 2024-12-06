@@ -9,7 +9,8 @@ export default defineConfig({
                 'resources/js/app.js',
                 'resources/css/main.css',
                 'resources/css/grape/grape.css',
-                'resources/js/grape/content-grape.js'
+                'resources/js/grape/content-grape.js',
+                'resources/js/grape/editor/index.js'
             ],
             refresh: true,
         }),

@@ -120,6 +120,8 @@
                 
                 </button>
                 <a target="_blank" class="mt-2 btn btn-sm btn-outline-primary ms-3" href="{{route('portfolio.preview',['token'=>$portfolio->token,'url'=>$currentPage->url])}}"><i class="fa-solid fa-eye"></i> Visualizar Resultado</a>
+
+                <a href="{{route('portfolios')}}" class="btn btn-sm btn-outline-warning mt-2"><i class="fa-solid fa-rotate-left"></i> Voltar</a>
               </div>
               <div class="panel__basic-actions"></div>
               
