@@ -36,6 +36,18 @@ class PortfolioController extends Controller
     {
         $data = $request->all();
 
+        if ($data['title'] == '' && $data['description']) {
+            return redirect()->back()->with('error', 'É necessário informar o título e a descrição do seu portifólio');
+        } 
+
+        if ($data['title'] == '') {
+            return redirect()->back()->with('error', 'É necessário informar o título do seu portifólio');
+        } 
+
+        if ($data['description'] == '') {
+            return redirect()->back()->with('error', 'É necessário informar a descrição do seu portifólio');
+        } 
+
         $data['token'] = Str::uuid();
         $data['user_id'] = Auth::user()->id;
         $portfolio = Portfolio::create($data);
@@ -48,9 +60,11 @@ class PortfolioController extends Controller
                 'portfolio_id' => $portfolio->id
             ];
             Page::create($array);
+            return redirect()->back()->with('success', 'Portifólio Criado com sucesso');
+        } else {
+            return redirect()->back()->with('error', 'Falha ao criar portifólio');
         }
 
-        return redirect()->back()->with('success', 'Portifólio Criado com sucesso');
     }
 
     /**
