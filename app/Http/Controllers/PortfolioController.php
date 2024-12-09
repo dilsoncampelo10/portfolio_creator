@@ -92,9 +92,26 @@ class PortfolioController extends Controller
     {
         $portfolio = Portfolio::findOrFail($request->id);
 
-        $portfolio->update($request->all());
+        $data = $request->all();
+        
+        if ($data['title'] == '' && $data['description']) {
+            return redirect()->back()->with('error', 'É necessário informar o título e a descrição do seu portifólio');
+        } 
 
-        return redirect()->back()->with('success', 'Portifólio alterado com sucesso');
+        if ($data['title'] == '') {
+            return redirect()->back()->with('error', 'É necessário informar o título do seu portifólio');
+        } 
+
+        if ($data['description'] == '') {
+            return redirect()->back()->with('error', 'É necessário informar a descrição do seu portifólio');
+        } 
+
+        if ($portfolio->update($data)) {
+            return redirect()->back()->with('success', 'Portifólio alterado com sucesso');
+        } else {
+            return redirect()->back()->with('success', 'Falha ao alterar portifólio');
+        }
+
     }
 
     /**
