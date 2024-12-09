@@ -18,8 +18,8 @@
                     <div>
                         <form action="{{route('portfolio.store')}}" method="POST">
                             @csrf
-                            <input type="text" name="title" placeholder="Título para portifólio" class="w-full rounded-lg mb-5">
-                            <textarea name="description" id="description" class="w-full rounded-lg" placeholder="Descrição para Portifólio"></textarea>
+                            <input required type="text" name="title" placeholder="Título para portifólio" class="w-full rounded-lg mb-5">
+                            <textarea required name="description" id="description" class="w-full rounded-lg" placeholder="Descrição para Portifólio"></textarea>
                             <div class="text-right">
                                 <button type="submit" class=" bg-green-500 text-white py-1 px-3 hover:bg-green-700 rounded-lg btn">Salvar</button>
                                 <button type="reset" class=" bg-gray-500 text-white py-1 px-3 hover:bg-gray-700 rounded-lg btn">Cancelar</button>
